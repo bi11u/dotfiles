@@ -1,0 +1,52 @@
+# Import previewer and cleaner -->
+set previewer ~/.config/lf/previewer
+set cleaner ~/.config/lf/cleaner
+
+
+# Basic Settings
+set hidden true
+set ignorecase true
+set icons true
+set rulerfmt "%d  |%a  |%p  |\033[7;31m %m \033[0m  |\033[7;33m %c \033[0m  |\033[7;35m %s \033[0m  |\033[7;34m %f \033[0m  |%i/%t"
+
+
+# Basic Functions
+map . set hidden!
+map <enter> open
+
+
+# Custom Functions
+# function to create a directory -->
+cmd mkdir ${{
+  printf "Directory Name: "
+  read ans
+  mkdir $ans
+}}
+
+
+# function to make a file -->
+cmd mkfile ${{
+  printf "File Name: "
+  read ans
+  $EDITOR $ans
+}}
+
+
+# function to open any type of text files with neovim -->
+cmd open &{{
+	case $(file --mime-type -Lb $f) in
+		text/*) lf -remote "send $id \$nvim \$fx";;
+		*) xdg-open "$f"
+	esac
+}}
+
+
+# Custom mappings -->
+
+map m
+map p paste
+map x cut
+map y copy
+
+map mf mkfile
+map md mkdir

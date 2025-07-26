@@ -1,0 +1,111 @@
+{
+    "layer": "top",
+    "height": 30,
+    "spacing": 5,
+    "modules-left": [
+        "hyprland/workspaces",
+        "mpris"
+    ],
+
+    "modules-center": [
+        "custom/colortemp",
+        "clock",
+    ],
+
+    "modules-right": [
+        "power-profiles-daemon",
+        "pulseaudio",
+        "bluetooth",
+        "network",
+        "battery",
+        "custom/power"
+    ],
+
+    "hyprland/window": {
+        "separate-outputs": true
+    },
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "on-click": "activate"
+    },
+
+    "clock": {
+        "tooltip": false,
+        "format": "[󰥔:{:%H:%M  :%a, %d %b %Y}]",
+    },
+
+    "battery": {
+        "states": {
+            "critical": 15,
+            "warning": 30
+        },
+        "format": "[{icon}:{capacity}]",
+        "format-icons": [ "󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹" ],
+        "format-charging": "[󰂄:{capacity}]",
+        "format-warning": "[󰂃:{capacity}]",
+        "tooltip": false
+    },
+
+    "network": {
+        "format-wifi": "[󰤨]",
+        "format-disconnected": "[󰤭]",
+        "tooltip-format": "{essid}",
+        "on-click": "~/.local/bin/wifimenu.sh"
+    },
+
+    "pulseaudio": {
+        "format": "[{icon}:{volume}]",
+        "format-icons": {"default": ["", "", ""]},
+        "format-muted": "[:0]",
+        "on-click": "pavucontrol",
+        "tooltip": false
+    },
+
+    "custom/power": {
+        "format": "[]",
+        "tooltip": false,
+        "on-click": "sleep 0.25 && ~/.local/bin/powermenu.sh"
+    },
+
+    "bluetooth": {
+        "format-on": "[]",
+        "format-off": "[]",
+        "format-connected": "[:]",
+        "on-click": "kitty -e bluetui"
+    },
+
+    "mpris": {
+        "format": "[{status_icon}] {dynamic}",
+        "interval": 0,
+        "max-length": 30,
+        "status-icons": {
+            "playing": "▶",
+            "paused": "⏸",
+            "stopped": ""
+        },
+        "dynamic-order": ["title", "artist"],
+        "tooltip-format": "{title} - {artist}",
+    },
+
+    "power-profiles-daemon": {
+        "format": "[{icon}:{profile}]",
+        "tooltip-format": "Power profile:{profile}",
+        "tooltip": false,
+        "format-icons": {
+            "default": "",
+            "performance": "",
+            "balanced": "",
+            "power-saver": ""
+        }
+    },
+
+    "custom/colortemp": {
+        "format": "[󰝩]",
+        "tooltip": false,
+        "on-click": "wlsunset -t 3000 -T 3001",
+        "on-click-right": "pkill wlsunset",
+    }
+
+}

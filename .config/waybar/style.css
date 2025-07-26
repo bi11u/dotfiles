@@ -1,0 +1,183 @@
+@define-color bg_dim #232A2E;
+@define-color bg0 #2D353B;
+@define-color bg1 #343F44;
+@define-color bg2 #3D484D;
+@define-color bg3 #475258;
+@define-color bg4 #4F585E;
+@define-color bg5 #56635F;
+@define-color bg_visual #543A48;
+@define-color bg_reg #514045;
+@define-color bg_green #425047;
+@define-color bg_blue #3A515D;
+@define-color bg_yellow #4D4C43;
+@define-color fg #D3C6AA;
+@define-color red #E67E80;
+@define-color orange #E69875;
+@define-color yellow #DBBC7F;
+@define-color green #A7C080;
+@define-color aqua #83C092;
+@define-color blue #7FBBB3;
+@define-color purple #D699B6;
+@define-color grey0 #7A8478;
+@define-color grey1 #859289;
+@define-color grey2 #9DA9A0;
+
+* {
+    font-family: JetBrainsMono Nerd Font Propo;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+window#waybar {
+    background-color: @bg_dim;
+    color: @fg;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/*
+window#waybar.empty {
+background-color: transparent;
+
+window#waybar.solo {
+background-color: #FFFFFF;
+}
+*/
+
+window#waybar.termite {
+    background-color: #3F3F3F;
+}
+
+window#waybar.chromium {
+    background-color: #000000;
+    border: none;
+}
+
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -3px transparent;
+    /* Avoid rounded borders under each button name */
+    border: none;
+    border-radius: 0;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+
+#workspaces button:hover {
+    color: @blue;
+    box-shadow: inherit;
+    text-shadow: inherit;
+    background: transparent;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    color: @grey0;
+    margin: 4px 0 4px 6px;
+    transition: color 200ms ease-in-out;
+}
+
+#workspaces button.selected {
+    color: @blue;
+}
+
+#workspaces button.active {
+    color: @purple;
+}
+
+#workspaces button.urgent {
+    color: @red;
+}
+
+#clock,
+#battery,
+#network,
+#pulseaudio,
+#mpris,
+#custom-power,
+#custom-colortemp,
+#power-profiles-daemon,
+#bluetooth {
+    padding: 0 9px;
+    color: @fg;
+    margin: 5px 0;
+}
+
+#window,
+#workspaces {
+    margin: 0 4px;
+}
+
+/* If workspaces is the leftmost module, reduce left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 2px;
+}
+
+#clock {
+    color: @fg;
+}
+
+#pulseaudio {
+    color: @purple;
+}
+
+#pulseaudio.muted {
+    color: @grey0;
+}
+
+#network {
+    color: @blue;
+}
+
+#network.disconnected {
+    color: @grey0;
+}
+
+#battery {
+    color: @green;
+}
+
+#battery.warning:not(.charging) {
+    color: @yellow;
+}
+
+#battery.critical:not(.charging) {
+    color: @red;
+}
+
+#custom-power {
+    color: @red;
+    margin-right: 5px;
+}
+
+#power-profiles-daemon.power-saver{
+    color: @green;
+}
+
+#power-profiles-daemon.balanced{
+    color: @yellow;
+}
+
+#power-profiles-daemon.performance{
+    color: @orange;
+}
+
+#bluetooth {
+    color: @aqua;
+}
+
+#bluetooth.off{
+    color: @grey0;
+}
+
+#mpris {
+    color: @aqua;
+}
+
+#custom-colortemp {
+    color: @fg;
+}
