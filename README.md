@@ -1,6 +1,6 @@
 # bi11u/dotfiles
 
-<img src="/screenshots/desktop.png" width=100% />
+<img src="/screenshots/desktop2.png" width=100% />
 
 My configuration of Hyprland for Arch Linux. These dotfiles are designed with the goal of providing a hyprland environment that is lightweight, efficient and aesthetically pleasing.
 

@@ -14,10 +14,15 @@
 
     "modules-right": [
         "power-profiles-daemon",
+        "custom/seperator",
         "pulseaudio",
+        "custom/seperator",
         "bluetooth",
+        "custom/seperator",
         "network",
+        "custom/seperator",
         "battery",
+        "custom/seperator",
         "custom/power"
     ],
 
@@ -28,12 +33,12 @@
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
-        "on-click": "activate"
+        "on-click": "activate",
     },
 
     "clock": {
         "tooltip": false,
-        "format": "[󰥔:{:%H:%M  :%a, %d %b %Y}]",
+        "format": "󰥔:{:%H:%M  :%a, %d %b %Y}",
     },
 
     "battery": {
@@ -41,43 +46,48 @@
             "critical": 15,
             "warning": 30
         },
-        "format": "[{icon}:{capacity}]",
+        "events": {
+            "on-discharging-warning": "notify-send -u normal 'LOW BATTERY WARNING' 'please connect to charger'",
+            "on-discharging-critical": "notify-send -u critical 'CRITICAL BATTERY' 'charge immediately now'",
+            "on-charging-100": "notify-send -u normal 'BATTERY FULLY CHARGED' 'please disconnect the charger'",
+        },
+        "format": "{icon}:{capacity}",
         "format-icons": [ "󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹" ],
-        "format-charging": "[󰂄:{capacity}]",
-        "format-warning": "[󰂃:{capacity}]",
+        "format-charging": "󰂄:{capacity}",
+        "format-warning": "󰂃:{capacity}",
         "tooltip": false
     },
 
     "network": {
-        "format-wifi": "[󰤨]",
-        "format-disconnected": "[󰤭]",
+        "format-wifi": "󰤨",
+        "format-disconnected": "󰤭",
         "tooltip-format": "{essid}",
         "on-click": "~/.local/bin/wifimenu.sh"
     },
 
     "pulseaudio": {
-        "format": "[{icon}:{volume}]",
+        "format": "{icon}:{volume}",
         "format-icons": {"default": ["", "", ""]},
-        "format-muted": "[:0]",
+        "format-muted": ":0",
         "on-click": "pavucontrol",
         "tooltip": false
     },
 
     "custom/power": {
-        "format": "[]",
+        "format": "",
         "tooltip": false,
         "on-click": "sleep 0.25 && ~/.local/bin/powermenu.sh"
     },
 
     "bluetooth": {
-        "format-on": "[]",
-        "format-off": "[]",
-        "format-connected": "[:]",
+        "format-on": "",
+        "format-off": "",
+        "format-connected": ":",
         "on-click": "kitty -e bluetui"
     },
 
     "mpris": {
-        "format": "[{status_icon}] {dynamic}",
+        "format": "{status_icon} {dynamic}",
         "interval": 0,
         "max-length": 30,
         "status-icons": {
@@ -90,7 +100,7 @@
     },
 
     "power-profiles-daemon": {
-        "format": "[{icon}:{profile}]",
+        "format": "{icon}:{profile}",
         "tooltip-format": "Power profile:{profile}",
         "tooltip": false,
         "format-icons": {
@@ -106,6 +116,11 @@
         "tooltip": false,
         "on-click": "wlsunset -t 3000 -T 3001",
         "on-click-right": "pkill wlsunset",
-    }
+    },
+
+    "custom/seperator": {
+        "format": "|",
+        "tooltip": false,
+    },
 
 }

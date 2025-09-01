@@ -25,14 +25,12 @@
 * {
     font-family: JetBrainsMono Nerd Font Propo;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 19px;
 }
 
 window#waybar {
-    background-color: @bg_dim;
+    background-color: rgba(35,42,46,0.0);
     color: @fg;
-    transition-property: background-color;
-    transition-duration: .5s;
 }
 
 window#waybar.hidden {
@@ -46,7 +44,7 @@ background-color: transparent;
 window#waybar.solo {
 background-color: #FFFFFF;
 }
-*/
+
 
 window#waybar.termite {
     background-color: #3F3F3F;
@@ -56,6 +54,7 @@ window#waybar.chromium {
     background-color: #000000;
     border: none;
 }
+*/
 
 button {
     /* Use box-shadow instead of border so the text isn't offset */
@@ -68,7 +67,7 @@ button {
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 
 #workspaces button:hover {
-    color: @blue;
+    color: @fg;
     box-shadow: inherit;
     text-shadow: inherit;
     background: transparent;
@@ -77,8 +76,7 @@ button {
 #workspaces button {
     padding: 0 5px;
     color: @grey0;
-    margin: 4px 0 4px 6px;
-    transition: color 200ms ease-in-out;
+    margin: 4px 0 4px 5px;
 }
 
 #workspaces button.selected {
@@ -86,7 +84,7 @@ button {
 }
 
 #workspaces button.active {
-    color: @purple;
+    color: @blue;
 }
 
 #workspaces button.urgent {
@@ -102,19 +100,19 @@ button {
 #custom-colortemp,
 #power-profiles-daemon,
 #bluetooth {
-    padding: 0 9px;
+    padding: 0 3px;
     color: @fg;
-    margin: 5px 0;
+    margin: 0px;
 }
 
 #window,
 #workspaces {
-    margin: 0 4px;
+    margin: 0 5px;
 }
 
 /* If workspaces is the leftmost module, reduce left margin */
 .modules-left > widget:first-child > #workspaces {
-    margin-left: 2px;
+    margin-left: 0px;
 }
 
 #clock {
@@ -180,4 +178,8 @@ button {
 
 #custom-colortemp {
     color: @fg;
+}
+
+#custom-seperator {
+    color: @aqua;
 }
