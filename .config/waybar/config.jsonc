@@ -1,0 +1,83 @@
+{
+  "layer": "top",
+  "height": 25,
+  "spacing": 5,
+  "modules-left": [
+    "niri/window",
+  ],
+
+  //"modules-center": [
+  //  "niri/workspaces",
+  //],
+
+  "modules-right": [
+    "pulseaudio",
+    "custom/separator",
+    "network",
+    "custom/separator",
+    "battery",
+    "custom/separator",
+    "clock",
+  ],
+
+  "niri/window": {
+    "separate-outputs": true
+  },
+
+  "niri/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "on-click": "activate",
+  },
+
+  "clock": {
+    "tooltip": false,
+    "format": "<span foreground='#d699b6'></span> {:%a, %e %b  <span foreground='#e67e80'>󰥔</span> %H:%M}",
+  },
+
+  "battery": {
+    "tooltip": false,
+    "states": {
+      "good": 95,
+      "warning": 25,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": "<span foreground='#e69875'></span> {capacity}%",
+    "format-icons": {
+      "default": [
+        "<span foreground='#e69875'></span>",
+        "<span foreground='#e69875'></span>",
+        "<span foreground='#e69875'></span>",
+        "<span foreground='#e69875'></span>",
+        "<span foreground='#e69875'></span>"
+      ]
+    }
+  },
+
+  "network": {
+    "format-wifi": "󰤨",
+    "format-disconnected": "󰤭",
+    "tooltip-format": "{essid}",
+  },
+
+
+  "custom/separator": {
+    "format": "",
+    "tooltip": false,
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-icons": {
+      "default": [
+        "<span foreground='#7fbbb3'>󰕿</span>",
+        "<span foreground='#7fbbb3'>󰖀</span>",
+        "<span foreground='#7fbbb3'>󰕾</span>",
+      ],
+
+    },
+    "on-click": "sleep 0.1 && foot wiremix",
+  },
+
+}

@@ -1,0 +1,95 @@
+return {
+	"ibhagwan/fzf-lua",
+	event = "VimEnter",
+	-- optional for icon support
+	--dependencies = { "nvim-tree/nvim-web-devicons" },
+	-- or if using mini.icons/mini.nvim
+	-- dependencies = { "nvim-mini/mini.icons" },
+	keys = {
+		{
+			"<leader>ff",
+			function()
+				require("fzf-lua").files()
+			end,
+		},
+		{
+			"<leader>fb",
+			function()
+				require("fzf-lua").buffers()
+			end,
+		},
+		{
+			"<leader>fo",
+			function()
+				require("fzf-lua").oldfiles()
+			end,
+		},
+		{
+			"<leader>fg",
+			function()
+				require("fzf-lua").live_grep()
+			end,
+		},
+		{
+			"<leader>gf",
+			function()
+				require("fzf-lua").git_files()
+			end,
+		},
+		{
+			"<leader>gs",
+			function()
+				require("fzf-lua").git_status()
+			end,
+		},
+		{
+			"<leader>gc",
+			function()
+				require("fzf-lua").git_commits()
+			end,
+		},
+		{
+			"<leader>gcf",
+			function()
+				require("fzf-lua").git_bcommits()
+			end,
+		},
+		{
+			"<leader>gb",
+			function()
+				require("fzf-lua").git_branches()
+			end,
+		},
+		{
+			"<leader>fh",
+			function()
+				require("fzf-lua").help_tags()
+			end,
+		},
+		{
+			"<leader>fx",
+			function()
+				require("fzf-lua").diagnostics_document()
+			end,
+		},
+		{
+			"<leader>fX",
+			function()
+				require("fzf-lua").diagnostics_workspace()
+			end,
+		},
+		{
+			"<leader>fs",
+			function()
+				require("fzf-lua").lsp_document_symbols()
+			end,
+		},
+		{
+			"<leader>fS",
+			function()
+				require("fzf-lua").lsp_workspace_symbols()
+			end,
+		},
+	},
+	opts = {},
+}

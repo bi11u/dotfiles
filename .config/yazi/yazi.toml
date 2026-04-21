@@ -1,0 +1,4 @@
+[mgr]
+show_hidden = true
+image_filter = 'nearest'
+show_symlink = false
