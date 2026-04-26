@@ -37,8 +37,8 @@
 }
 
 window#waybar {
-  /*background-color: rgba(45, 53, 59 , 0.1);*/
-  background-color: @bg0;
+  background-color: rgba(40, 40, 40 , 0.8);
+  /*background-color: @bg0;*/
   color: @fg0;
 }
 
