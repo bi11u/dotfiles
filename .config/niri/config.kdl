@@ -76,7 +76,7 @@ layout {
 }
 
 spawn-at-startup "waybar"
-spawn-sh-at-startup "swaybg -i $HOME/Pictures/walls/volcano-landscape.jpg"
+spawn-sh-at-startup "swaybg -i $HOME/Pictures/walls/gruv-street.jpg"
 spawn-sh-at-startup "wlsunset -t 4000 -T 4001"
 spawn-sh-at-startup "wl-paste --type text --watch cliphist store"
 //spawn-sh-at-startup "wl-paste --type image --watch cliphist store"
@@ -108,12 +108,12 @@ window-rule {
   open-floating true
 }
 
-layer-rule {
-    match namespace="^launcher$"
+/-layer-rule {
+  match namespace="^launcher$"
 
-    background-effect {
-        blur true
-    }
+  background-effect {
+    blur true
+  }
 }
 
 // Example: enable rounded corners for all windows.
@@ -235,7 +235,6 @@ binds {
   // And you can also move a whole workspace to another monitor:
   // Mod+Shift+Ctrl+Left  { move-workspace-to-monitor-left; }
   // ...
-
   Mod+Page_Down      { focus-workspace-down; }
   Mod+Page_Up        { focus-workspace-up; }
   Mod+U              { focus-workspace-down; }
@@ -244,6 +243,16 @@ binds {
   Mod+Ctrl+Page_Up   { move-column-to-workspace-up; }
   Mod+Ctrl+U         { move-column-to-workspace-down; }
   Mod+Ctrl+I         { move-column-to-workspace-up; }
+
+  // toggle-windowed-fulscreen
+  // When screencasting browser-based presentations like Google Slides,
+  // you usually want to hide the browser UI, which requires making the browser fullscreen.
+  // This is not always convenient, for example if you have an ultrawide monitor,
+  // or just want to leave the browser as a smaller window, without taking up an entire monitor.
+  // The toggle-windowed-fullscreen bind helps with this. It tells the app that it went fullscreen,
+  //while in reality leaving it as a normal window that you can resize and put wherever you want.
+  //...
+  Mod+Ctrl+Shift+F { toggle-windowed-fullscreen; }
 
   // Alternatively, there are commands to move just a single window:
   // Mod+Ctrl+Page_Down { move-window-to-workspace-down; }
