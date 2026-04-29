@@ -108,7 +108,7 @@ window-rule {
   open-floating true
 }
 
-/-layer-rule {
+layer-rule {
   match namespace="^launcher$"
 
   background-effect {
