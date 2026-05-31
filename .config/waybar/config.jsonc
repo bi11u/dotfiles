@@ -3,6 +3,7 @@
   "height": 25,
   "spacing": 5,
   "modules-left": [
+    "niri/workspaces",
     "niri/window",
   ],
 
