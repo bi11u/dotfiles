@@ -4,12 +4,13 @@
   "spacing": 5,
   "modules-left": [
     "niri/workspaces",
-    "niri/window",
+    "custom/separator",
+    "mpd",
   ],
 
-  //"modules-center": [
-  //  "niri/workspaces",
-  //],
+  "modules-center": [
+    "niri/window",
+  ],
 
   "modules-right": [
     "pulseaudio",
@@ -24,6 +25,7 @@
   "niri/window": {
     "separate-outputs": true
   },
+
 
   "niri/workspaces": {
     "disable-scroll": true,
@@ -79,6 +81,32 @@
 
     },
     "on-click": "sleep 0.1 && foot wiremix",
+  },
+
+  "mpd": {
+    "max-length": 50,
+    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{title} - {album} - {artist} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ",
+    "format-disconnected": "Disconnected ",
+    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+    "interval": 10,
+    "consume-icons": {
+      "on": " " // Icon shows only when "consume" is on
+    },
+    "random-icons": {
+      "off": "<span color=\"#ea6962\"></span> ", // Icon grayed out when "random" is off
+      "on": " "
+    },
+    "repeat-icons": {
+      "on": " "
+    },
+    "single-icons": {
+      "on": "1 "
+    },
+    "state-icons": {
+      "paused": "",
+      "playing": ""
+    },
+    "tooltip": false,
   },
 
 }

@@ -17,13 +17,8 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias rm='rm -i'
 
-
-# PATH
-export PATH="$HOME/npm-packages/node_modules/.bin:$PATH"
-
-
 #Prompt
-PROMPT="${NEWLINE}%K{#32302f}%F{#d4be98}$(date +%_I:%M%P) %K{#3c3836}%F{#d4be98} %n %K{#504945} %~ %f%k ❯ " # nord theme
+PROMPT="${NEWLINE}%K{#32302f}%F{#d4be98}$(date +%_I:%M%P) %K{#3c3836}%F{#d4be98} %n %K{#504945} %~ %f%k ❯ "
 
 # plugin
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

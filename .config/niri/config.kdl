@@ -22,6 +22,21 @@ input {
   focus-follows-mouse max-scroll-amount="0%"
 }
 
+blur {
+ passes 3
+ offset 1
+ noise 0.05
+  saturation 1.5
+}
+
+environment {
+  XDG_CURRENT_DESKTOP "niri"
+  QT_QPA_PLATFORM "wayland"
+  ELECTRON_OZONE_PLATFORM_HINT "auto"
+  QT_QPA_PLATFORMTHEME "qt6ct"
+  QT_QPA_PLATFORMTHEME_QT6 "qt6ct"
+  DISPLAY ":1"
+}
 
 cursor {
   xcursor-theme "Capitaine Cursors (Gruvbox)"
@@ -76,7 +91,7 @@ layout {
 }
 
 spawn-at-startup "waybar"
-spawn-sh-at-startup "swaybg -i $HOME/Pictures/walls/gruv-street.jpg"
+spawn-sh-at-startup "swaybg -i $HOME/Pictures/walls/scary-gruv.jpg"
 spawn-sh-at-startup "wlsunset -t 4000 -T 4001"
 spawn-sh-at-startup "wl-paste --type text --watch cliphist store"
 //spawn-sh-at-startup "wl-paste --type image --watch cliphist store"
@@ -100,6 +115,7 @@ window-rule {
 window-rule {
   match app-id="foot"
   open-maximized false
+  draw-border-with-background false
 }
 
 // Open the Firefox picture-in-picture player as floating by default.
