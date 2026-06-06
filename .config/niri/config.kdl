@@ -23,9 +23,9 @@ input {
 }
 
 blur {
- passes 3
- offset 1
- noise 0.05
+  passes 3
+  offset 1
+  noise 0.05
   saturation 1.5
 }
 

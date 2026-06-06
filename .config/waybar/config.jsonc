@@ -5,11 +5,10 @@
   "modules-left": [
     "niri/workspaces",
     "custom/separator",
-    "mpd",
+    "niri/window"
   ],
 
   "modules-center": [
-    "niri/window",
   ],
 
   "modules-right": [
@@ -19,7 +18,7 @@
     "custom/separator",
     "battery",
     "custom/separator",
-    "clock",
+    "clock"
   ],
 
   "niri/window": {
@@ -30,12 +29,12 @@
   "niri/workspaces": {
     "disable-scroll": true,
     "all-outputs": true,
-    "on-click": "activate",
+    "on-click": "activate"
   },
 
   "clock": {
     "tooltip": false,
-    "format": "<span foreground='#d699b6'></span> {:%a, %e %b  <span foreground='#e67e80'>󰥔</span> %H:%M}",
+    "format": "<span foreground='#d699b6'></span> {:%a, %e %b  <span foreground='#e67e80'>󰥔</span> %H:%M}"
   },
 
   "battery": {
@@ -61,13 +60,13 @@
   "network": {
     "format-wifi": "󰤨",
     "format-disconnected": "󰤭",
-    "tooltip-format": "{essid}",
+    "tooltip-format": "{essid}"
   },
 
 
   "custom/separator": {
     "format": "",
-    "tooltip": false,
+    "tooltip": false
   },
 
   "pulseaudio": {
@@ -76,37 +75,11 @@
       "default": [
         "<span foreground='#7fbbb3'>󰕿</span>",
         "<span foreground='#7fbbb3'>󰖀</span>",
-        "<span foreground='#7fbbb3'>󰕾</span>",
-      ],
+        "<span foreground='#7fbbb3'>󰕾</span>"
+      ]
 
     },
-    "on-click": "sleep 0.1 && foot wiremix",
-  },
-
-  "mpd": {
-    "max-length": 50,
-    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{title} - {album} - {artist} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ",
-    "format-disconnected": "Disconnected ",
-    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-    "interval": 10,
-    "consume-icons": {
-      "on": " " // Icon shows only when "consume" is on
-    },
-    "random-icons": {
-      "off": "<span color=\"#ea6962\"></span> ", // Icon grayed out when "random" is off
-      "on": " "
-    },
-    "repeat-icons": {
-      "on": " "
-    },
-    "single-icons": {
-      "on": "1 "
-    },
-    "state-icons": {
-      "paused": "",
-      "playing": ""
-    },
-    "tooltip": false,
-  },
+    "on-click": "sleep 0.1 && foot wiremix"
+  }
 
 }

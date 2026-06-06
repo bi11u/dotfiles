@@ -84,7 +84,6 @@ button {
 #clock,
 #battery,
 #network,
-#mpd,
 #pulseaudio {
   padding: 0 5px;
   color: @fg0;
