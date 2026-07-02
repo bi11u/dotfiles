@@ -22,13 +22,6 @@ input {
   focus-follows-mouse max-scroll-amount="0%"
 }
 
-blur {
-  passes 3
-  offset 1
-  noise 0.05
-  saturation 1.5
-}
-
 environment {
   XDG_CURRENT_DESKTOP "niri"
   QT_QPA_PLATFORM "wayland"
@@ -91,7 +84,7 @@ layout {
 }
 
 spawn-at-startup "waybar"
-spawn-sh-at-startup "swaybg -i $HOME/Pictures/walls/scary-gruv.jpg"
+spawn-sh-at-startup "swaybg -i $HOME/Pictures/walls/gruvbox-shipInThePark.png"
 spawn-sh-at-startup "wlsunset -t 4000 -T 4001"
 spawn-sh-at-startup "wl-paste --type text --watch cliphist store"
 //spawn-sh-at-startup "wl-paste --type image --watch cliphist store"
@@ -122,14 +115,6 @@ window-rule {
 window-rule {
   match app-id=r#"firefox$"# title="^Picture-in-Picture$"
   open-floating true
-}
-
-layer-rule {
-  match namespace="^launcher$"
-
-  background-effect {
-    blur true
-  }
 }
 
 // Example: enable rounded corners for all windows.
