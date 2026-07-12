@@ -12,6 +12,8 @@
   ],
 
   "modules-right": [
+    "pulseaudio#microphone",
+    "custom/separator",
     "pulseaudio",
     "custom/separator",
     "network",
@@ -71,6 +73,7 @@
 
   "pulseaudio": {
     "format": "{icon} {volume}%",
+    "format-muted": "",
     "format-icons": {
       "default": [
         "<span foreground='#7fbbb3'>󰕿</span>",
@@ -79,7 +82,19 @@
       ]
 
     },
-    "on-click": "sleep 0.1 && foot wiremix"
-  }
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-click-right": "sleep 0.1 && foot wiremix"
+  },
 
+  "pulseaudio#microphone": {
+    "format": "{format_source}",
+    "format-source": "<span foreground='#a9b665'></span> {volume}%",
+    "format-source-muted": "<span foreground='#7c6f64'></span>", 
+
+    "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+    "on-click-right": "foot -e wiremix",
+
+    "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +1%",
+    "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -1%"
+  }
 }
